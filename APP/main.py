@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import uvicorn
 from server_config import settings
 from fastapi.middleware.cors import CORSMiddleware
-
+import sys
 
 
 app = FastAPI()
@@ -21,10 +21,13 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+@app.get("/")
+def hhi():
+    return "KKKKK"
 
 
 def main():
-    uvicorn.run("APP.main:app",host=settings.system_ip_fast, port=settings.system_port_fast, log_level="info",reload=True)
+    uvicorn.run("main:app",host=settings.system_ip_fast, port=settings.system_port_fast, log_level="info",reload=True)
 
 if __name__ == "__main__":
     main()
