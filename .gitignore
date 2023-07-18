@@ -2,4 +2,5 @@
 *.env
 *.out
 env/
+mongodata/
 __pycache__/
