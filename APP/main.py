@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
-from server_config import settings
+from APP.server_config import settings
 from fastapi.middleware.cors import CORSMiddleware
-import sys
 
 
 app = FastAPI()
@@ -22,8 +21,8 @@ app.add_middleware(
 )
 
 @app.get("/")
-def hhi():
-    return "KKKKK"
+def hello():
+    return "hello"
 
 
 def main():
